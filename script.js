@@ -1,7 +1,8 @@
 
 
 //let body = document.querySelector(".body");
-
+let paragraph = document.createElement("p")
+paragraph.textContent = "To change language of keyboard press left Shift + left Alt"
 let textArea = document.createElement('textarea');
 let keyboardContainer = document.createElement('div');
 keyboardContainer.classList.add("keyboard-container");
@@ -27,7 +28,7 @@ keyboardContainer.appendChild(lines3)
 keyboardContainer.appendChild(lines4)
 keyboardContainer.appendChild(lines5)
 textArea.classList.add("text-input-block")
-
+document.body.appendChild(paragraph)
 document.body.appendChild(textArea)
 document.body.appendChild(keyboardContainer)
 
@@ -145,50 +146,69 @@ window.addEventListener('keydown', function(e){
       }
     }
 
-   // let eng = 
+   
     if (e.shiftKey && e.altKey){
+      shiftLeft.classList.toggle("rus");
+      altLeft.classList.toggle("rus");
+
+      if (shiftLeft.classList.contains("rus") && altLeft.classList.contains("rus")){
         localStorage.setItem("language", "rus");
-        loadKeys()
+        let lang = localStorage.getItem("language")
+        changeLanguage(lang)
+      } if (!shiftLeft.classList.contains("rus") && !altLeft.classList.contains("rus")){
+        localStorage.setItem("language", "en");
+        let lang = localStorage.getItem("language")
+        changeLanguage(lang)
+      }
     }
+  
+
 })
-/*
+
 function changeLanguage(lang){
 
     if (lang == "en"){
         for (let i = 0; i< keys.length; i++){
-            keys[i].setAttribute('uppercase', engKeysLayout.upperCase.shift())
-            keys[i].setAttribute('lowercase', engKeysLayout.lowerCase.shift())
-            keys[i].setAttribute('switch', engKeysLayout.switch.shift())
+            keys[i].setAttribute('uppercase', engKeysLayout.upperCase[i])
+            keys[i].setAttribute('lowercase', engKeysLayout.lowerCase[i])
+            keys[i].setAttribute('switch', engKeysLayout.switch[i])
             keys[i].textContent = keys[i].getAttribute("lowercase")
          } 
     } if (lang == "rus"){
         for (let i = 0; i< keys.length; i++){
-            keys[i].setAttribute('uppercase', rusKeysLayout.upperCase.shift())
-            keys[i].setAttribute('lowercase', rusKeysLayout.lowerCase.shift())
-            keys[i].setAttribute('switch', rusKeysLayout.switch.shift())
+            keys[i].setAttribute('uppercase', rusKeysLayout.upperCase[i])
+            keys[i].setAttribute('lowercase', rusKeysLayout.lowerCase[i])
+            keys[i].setAttribute('switch', rusKeysLayout.switch[i])
             keys[i].textContent = keys[i].getAttribute("lowercase")
          } 
     }
 }
-*/
-function loadKeys(){
-  //  let lang = localStorage.getItem("language")
-   // if (lang == "en"){
-        for (let i = 0; i< keys.length; i++){
-            keys[i].setAttribute('uppercase', engKeysLayout.upperCase.shift())
-            keys[i].setAttribute('lowercase', engKeysLayout.lowerCase.shift())
-            keys[i].setAttribute('switch', engKeysLayout.switch.shift())
-            keys[i].textContent = keys[i].getAttribute("lowercase")
-         } 
-   /* } if (lang == "rus"){
-        for (let i = 0; i< keys.length; i++){
-            keys[i].setAttribute('uppercase', rusKeysLayout.upperCase.shift())
-            keys[i].setAttribute('lowercase', rusKeysLayout.lowerCase.shift())
-            keys[i].setAttribute('switch', rusKeysLayout.switch.shift())
-            keys[i].textContent = keys[i].getAttribute("lowercase")
-         } 
-        */ }
 
+function loadKeys(){
+   let lang = localStorage.getItem("language")
+   if (lang == "en"){
+        for (let i = 0; i< keys.length; i++){
+            keys[i].setAttribute('uppercase', engKeysLayout.upperCase[i])
+            keys[i].setAttribute('lowercase', engKeysLayout.lowerCase[i])
+            keys[i].setAttribute('switch', engKeysLayout.switch[i])
+            keys[i].textContent = keys[i].getAttribute("lowercase")
+         } 
+    } if (lang == "rus"){
+        for (let i = 0; i< keys.length; i++){
+            keys[i].setAttribute('uppercase', rusKeysLayout.upperCase[i])
+            keys[i].setAttribute('lowercase', rusKeysLayout.lowerCase[i])
+            keys[i].setAttribute('switch', rusKeysLayout.switch[i])
+            keys[i].textContent = keys[i].getAttribute("lowercase")
+         } 
+     } if (lang == undefined){
+      for (let i = 0; i< keys.length; i++){
+        keys[i].setAttribute('uppercase', engKeysLayout.upperCase[i])
+        keys[i].setAttribute('lowercase', engKeysLayout.lowerCase[i])
+        keys[i].setAttribute('switch', engKeysLayout.switch[i])
+        keys[i].textContent = keys[i].getAttribute("lowercase")
+     } 
+     }
+    }
 loadKeys()
 //localStorage.setItem("language", "en")
 //let eng = localStorage.getItem("language")
