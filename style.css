@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body,
+  html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+  }
+
+.text-input-block {
+  border: 5px solid rgb(21, 19, 36);
+  width: 900px;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 10px;
+  background: #6c5570;
+  color: rgb(219, 215, 200);
+  font-size: 16px;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 auto;
+    border: 5px solid rgb(21, 19, 36);
+    max-width: 900px;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    background: #6c5570;
+
+
+}
+
+.key {
+  border-radius: 10px;
+    border: 2px solid rgb(55, 19, 56);
+    background-color: rgb(219, 215, 200);
+    transition: 0.5s ease-in-out all;
+    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-backspace {
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+}
+
+.key-tab {
+  width: 100px;
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-capslock {
+  width: 100px;
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-shiftright{
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-shiftleft {
+  width: 157px;
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-ctrlleft, .key-ctrlright{
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-altleft, .key-altright{
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.key-arrowup, 
+.key-arrowdown, 
+.key-arrowleft, 
+.key-arrowright,
+.key-win, 
+.key-enter,.key-del, 
+.key-quote{
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.key-space {
+  width: 394px;
+  border-radius: 10px;
+  border: 2px solid rgb(55, 19, 56);
+  background-color: rgb(219, 215, 200);
+  transition: 0.5s ease-in-out all;
+  cursor: pointer;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.line {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.active {
+  background-color:  rgb(55, 19, 56);
+  color: rgb(219, 215, 200);
+  transition: 0,5s all;
+}
